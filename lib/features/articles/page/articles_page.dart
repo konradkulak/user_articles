@@ -9,9 +9,9 @@ import 'package:user_articles/features/articles/cubit/articles_cubit.dart';
 
 class ArticlesPage extends StatelessWidget {
   const ArticlesPage({
-    Key? key,
+    super.key,
     required this.author,
-  }) : super(key: key);
+  });
 
   final AuthorModel author;
 
@@ -86,9 +86,8 @@ class ArticlesPage extends StatelessWidget {
 
 class _ArticleItemWidget extends StatelessWidget {
   const _ArticleItemWidget({
-    Key? key,
     required this.model,
-  }) : super(key: key);
+  });
 
   final ArticleModel model;
 
