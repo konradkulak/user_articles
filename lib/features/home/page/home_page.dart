@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:user_articles/app/core/enums.dart';
@@ -9,8 +10,8 @@ import 'package:user_articles/features/home/cubit/home_cubit.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
         create: (context) {
           return HomeCubit(
             authorsRepository: AuthorsRepository(
-              remoteDataSource: AuthorsRemoteDioDataSource(),
+              remoteDataSource: AuthorsRemoteRetrofitDataSource(Dio()),
             ),
           )..start();
         },
@@ -62,9 +63,8 @@ class HomePage extends StatelessWidget {
 
 class _AuthorItemWidget extends StatelessWidget {
   const _AuthorItemWidget({
-    Key? key,
     required this.model,
-  }) : super(key: key);
+  });
 
   final AuthorModel model;
 
