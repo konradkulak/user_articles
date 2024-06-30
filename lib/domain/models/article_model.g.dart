@@ -6,15 +6,15 @@ part of 'article_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ArticleModel _$$_ArticleModelFromJson(Map<String, dynamic> json) =>
-    _$_ArticleModel(
-      json['id'] as int,
-      json['author_id'] as int,
+_$ArticleModelImpl _$$ArticleModelImplFromJson(Map<String, dynamic> json) =>
+    _$ArticleModelImpl(
+      (json['id'] as num).toInt(),
+      (json['author_id'] as num).toInt(),
       json['content'] as String,
       json['picture'] as String,
     );
 
-Map<String, dynamic> _$$_ArticleModelToJson(_$_ArticleModel instance) =>
+Map<String, dynamic> _$$ArticleModelImplToJson(_$ArticleModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'author_id': instance.authorId,
